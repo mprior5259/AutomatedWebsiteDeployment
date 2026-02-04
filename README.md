@@ -99,19 +99,13 @@ All endpoints require API key via query parameter in header (`X-API-Key: xxx`)
 ## Deployment Flow
 
 1. User selects "Site Deploy"
-   ↓
 2. System validates domain exists via API
-   ↓
 3. System retrieves hosted site details (determines target server)
-   ↓
 4. Backup existing files to rollback directory
-   ↓
 5. Generate file copy list (excluding restricted files)
-   ↓
 6. Deploy files with mock impersonation
-   ↓
-7. Success → Completion message
-   Failure → Automatic rollback to previous state
+7. Success: Completion message
+8. Failure: Automatic rollback to previous state
 
 ### Architecture & Design
 - **Layered architecture** - API, Manager, Data separation
